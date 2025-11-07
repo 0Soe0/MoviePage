@@ -4,6 +4,7 @@ import { Favorites } from './pages/Favorites';
 import { NotFound } from './pages/NotFound';
 import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components';
+import { MovieProvider } from './context/MovieContext'; 
 import { useState } from 'react';
 
 export const App = () => {
@@ -15,7 +16,7 @@ export const App = () => {
 
   return (
     <>
-    <div>
+    <MovieProvider>
       {/* Pass the reset function to the Navbar component so that it can call it when the home link is clicked */}
       <Navbar onHomeClick={handleHomeReset} />
       <main className="main-content">
@@ -25,7 +26,7 @@ export const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-    </div>
+    </MovieProvider>
     </>
   )
 }

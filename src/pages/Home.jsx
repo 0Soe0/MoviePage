@@ -113,13 +113,16 @@ export const Home = ({ resetKey }) => {
       { threshold: 0.1 }
     );
 
-    if (observerTarget.current) {
-      observer.observe(observerTarget.current);
+    // Capture the current ref value to use in cleanup
+    const currentTarget = observerTarget.current;
+
+    if (currentTarget) {
+      observer.observe(currentTarget);
     }
 
     return () => {
-      if (observerTarget.current) {
-        observer.unobserve(observerTarget.current);
+      if (currentTarget) {
+        observer.unobserve(currentTarget);
       }
     };
   }, [currentPage, totalPages, loading, loadingMore, loadMoreMovies]);
