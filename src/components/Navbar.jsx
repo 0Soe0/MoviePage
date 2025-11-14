@@ -16,8 +16,8 @@ export const Navbar = ({ onHomeClick }) => {
 
     return (
         <nav className="navbar">
-            <div className="navbar-brand">
-                <Link to="/" onClick={handleHomeClick}>Movie App</Link>
+            <div>
+                <Link to="/" onClick={handleHomeClick}><img src="/video.png" alt="An icon of a video camera" className="navbar-img"/></Link>
             </div>
             <div className="navbar-links">
               <Link to="/" className="nav-link" onClick={handleHomeClick}>Home</Link>

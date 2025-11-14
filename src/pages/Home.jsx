@@ -166,9 +166,13 @@ const handleSearch = async (e) => {
 
     return (
         <div className="home">
-            <form action="submit" onSubmit={handleSearch} className="search-form">
+            <form action="submit" onSubmit={handleSearch}>
+              <div className='form-data'>
+
+              
               <input type="text" placeholder="Search for a movie..." className="search-input" value={search} onChange={(e) => setSearch(e.target.value)}/>
               <button type="submit" className="search-btn">Search</button>
+              </div>
             </form>
 
             {error && <div className="error-message">{error}</div>}

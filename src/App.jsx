@@ -2,6 +2,7 @@ import './css/App.css';
 import { Home } from './pages/Home';
 import { Favorites } from './pages/Favorites';
 import { NotFound } from './pages/NotFound';
+import { Movie } from './pages/Movie';
 import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components';
 import { MovieProvider } from './context/MovieContext'; 
@@ -23,6 +24,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Home resetKey={homeResetKey} />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/movie/:id" element={<Movie />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

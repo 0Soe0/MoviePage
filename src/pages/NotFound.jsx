@@ -1,9 +1,12 @@
-//import '../css/NotFound.css';
+import '../css/NotFound.css';
 
 export const NotFound = () => {
     return (
-        <div>
-            <h1>404 - Page Not Found</h1>
+        <div className="not-found">
+            <h1>404 - Page
+                <span> NOT </span>
+                found
+            </h1>
         </div>
     )
 }
